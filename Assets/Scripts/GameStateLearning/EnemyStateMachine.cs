@@ -8,7 +8,6 @@ public class EnemyStateMachine : StateMachineBase<EnemyStateBase>
     private Player _player;
     private AreaObjectChecker _areaObjectChecker;
 
-
     public EnemyStateMachine(Enemy enemy, Player player)
     {
         _enemy = enemy;

@@ -1,14 +1,16 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ContactBehaviour : MonoBehaviour
 {
+    public event Action<IContactInteractable> OnContact;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.TryGetComponent<IContactInteractable>(out var contactObject))
         {
-            contactObject.Interact();
+            OnContact?.Invoke(contactObject);
         }
     }
 }

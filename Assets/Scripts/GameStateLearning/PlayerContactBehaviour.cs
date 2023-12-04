@@ -11,7 +11,6 @@
         Initialize();
     }
 
-
     private void Initialize()
     {
         _contactBeh.OnContact += Interact;
